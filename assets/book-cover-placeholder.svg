@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="720" viewBox="0 0 520 720" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder okładki książki</title>
+  <desc id="desc">Minimalistyczna okładka książki o świadomym wyborze studiów</desc>
+  <rect width="520" height="720" fill="#171717"/>
+  <rect x="28" y="28" width="464" height="664" fill="none" stroke="#b88a44" stroke-width="4"/>
+  <text x="58" y="120" fill="#faf7f0" font-family="Georgia, serif" font-size="56" font-weight="700">
+    <tspan x="58" dy="0">Nie idź</tspan>
+    <tspan x="58" dy="64">na studia</tspan>
+    <tspan x="58" dy="64">bez planu</tspan>
+  </text>
+  <line x1="58" y1="340" x2="410" y2="340" stroke="#8b1e1e" stroke-width="10"/>
+  <text x="58" y="410" fill="#efe4d3" font-family="Arial, sans-serif" font-size="26" font-weight="700">
+    <tspan x="58" dy="0">O czasie, pieniądzach,</tspan>
+    <tspan x="58" dy="38">presji i decyzji,</tspan>
+    <tspan x="58" dy="38">która ma sens.</tspan>
+  </text>
+  <text x="58" y="635" fill="#b88a44" font-family="Arial, sans-serif" font-size="24" font-weight="700">[Katarzyna / imię autorki]</text>
+</svg>

@@ -1,0 +1,9 @@
+FRAGMENT ROBOCZY
+
+Tytuł roboczy: Nie idź na studia bez planu
+
+Jeżeli nie wiesz, po co idziesz na studia, bardzo możliwe, że idziesz tam po cudzy spokój, a nie po własną przyszłość.
+
+Ta książka nie powstała po to, żeby obrażać edukację. Powstała po to, żeby zatrzymać decyzję, którą zbyt wiele osób podejmuje automatycznie. Studia mogą być dobre. Mogą być potrzebne. Mogą też być kosztowną ucieczką przed pytaniem: co naprawdę chcę zbudować?
+
+TODO: zastąpić ten plik finalnym fragmentem książki lub próbką PDF przed publikacją.
