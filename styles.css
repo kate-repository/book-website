@@ -263,6 +263,21 @@ p {
   background: var(--soft);
 }
 
+.text-download-link {
+  display: inline-flex;
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.96rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.text-download-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 .button--wide {
   width: 100%;
   margin-top: 1.5rem;
@@ -428,6 +443,13 @@ p {
 
 .inline-cta {
   margin-top: 1.3rem;
+}
+
+.fragment-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
 }
 
 .outcomes-grid,
@@ -820,11 +842,18 @@ blockquote {
   .button-row {
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .button {
     width: auto;
     min-width: 220px;
+  }
+
+  .fragment-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   .outcomes-grid {
