@@ -95,9 +95,11 @@ h1 {
 }
 
 .hero h1 {
-  max-width: 780px;
+  max-width: min(100%, 780px);
   font-size: clamp(2.75rem, 5.6vw, 5.25rem);
   line-height: 1.02;
+  overflow-wrap: normal;
+  text-wrap: balance;
 }
 
 h2 {
@@ -181,6 +183,11 @@ p {
 
 .hero + .problem {
   padding-top: clamp(1.9rem, 4vw, 3.4rem);
+}
+
+.hero__content {
+  min-width: 0;
+  overflow: visible;
 }
 
 .hero__lead {
@@ -893,7 +900,7 @@ blockquote {
 @media (max-width: 520px) {
   :root {
     --section-y: clamp(2.15rem, 9vw, 2.85rem);
-    --section-title-size: clamp(1.68rem, 7.2vw, 2.25rem);
+    --section-title-size: clamp(1.62rem, 6.8vw, 2.12rem);
     --card-x: 1rem;
   }
 
@@ -918,8 +925,12 @@ blockquote {
 
   .hero h1 {
     max-width: 100%;
-    font-size: clamp(1.82rem, 8vw, 2.3rem);
+    font-size: clamp(1.78rem, 7.6vw, 2.2rem);
     line-height: 1.06;
+  }
+
+  .problem h2 {
+    line-height: 1.12;
   }
 
   .hero__lead {
