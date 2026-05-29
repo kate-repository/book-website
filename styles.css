@@ -9,8 +9,13 @@
   --gold: #b88a44;
   --soft: #efe4d3;
   --shadow: 0 26px 70px rgba(23, 23, 23, 0.16);
-  --section-y: clamp(3.5rem, 7vw, 6rem);
+  --section-y: clamp(2.75rem, 5.5vw, 4.75rem);
   --card-x: clamp(1.25rem, 5vw, 4.5rem);
+  --eyebrow-size: 0.78rem;
+  --section-title-size: clamp(1.95rem, 3.6vw, 3.2rem);
+  --section-title-line: 1.08;
+  --card-title-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  --card-title-line: 1.22;
 }
 
 * {
@@ -51,6 +56,24 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 20;
+  padding: 0.65rem 0.9rem;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 850;
+  text-decoration: none;
+  transform: translateY(calc(-100% - 1rem));
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -72,22 +95,29 @@ h1 {
 }
 
 .hero h1 {
-  font-size: clamp(3.2rem, 7vw, 7rem);
-  line-height: 0.95;
+  max-width: 780px;
+  font-size: clamp(2.75rem, 5.6vw, 5.25rem);
+  line-height: 1.02;
 }
 
 h2 {
   max-width: 880px;
-  font-size: clamp(2rem, 4.7vw, 3.85rem);
+  font-size: var(--section-title-size);
+  line-height: var(--section-title-line);
 }
 
 h3 {
-  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-size: var(--card-title-size);
+  line-height: var(--card-title-line);
 }
 
 p {
   margin: 0 0 1rem;
   overflow-wrap: break-word;
+}
+
+.text-nowrap {
+  white-space: nowrap;
 }
 
 .site-header {
@@ -142,11 +172,15 @@ p {
 
 .hero {
   display: grid;
-  gap: clamp(2rem, 5vw, 4.5rem);
-  min-height: calc(92svh - 68px);
+  gap: clamp(2rem, 4.5vw, 4rem);
+  min-height: auto;
   align-items: center;
-  padding-top: clamp(2.4rem, 6vw, 4rem);
-  padding-bottom: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(1.35rem, 3vw, 2.4rem);
+  padding-bottom: clamp(1.5rem, 3.5vw, 2.75rem);
+}
+
+.hero + .problem {
+  padding-top: clamp(1.9rem, 4vw, 3.4rem);
 }
 
 .hero__lead {
@@ -166,11 +200,12 @@ p {
 }
 
 .eyebrow {
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.8rem;
   color: var(--accent);
-  font-size: 0.78rem;
+  font-size: var(--eyebrow-size);
   font-weight: 850;
   letter-spacing: 0.1em;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
@@ -191,6 +226,7 @@ p {
   padding: 0.9rem 1.25rem;
   border: 2px solid var(--accent);
   font-weight: 850;
+  line-height: 1.2;
   text-align: center;
   text-decoration: none;
   overflow-wrap: anywhere;
@@ -240,13 +276,18 @@ p {
 
 .section-heading {
   max-width: 850px;
-  margin-bottom: clamp(1.5rem, 4vw, 2.4rem);
+  margin-bottom: clamp(1.45rem, 3.4vw, 2.25rem);
+}
+
+.section-heading h2 {
+  max-width: 840px;
 }
 
 .section-heading p:not(.eyebrow) {
-  margin-top: 1.2rem;
+  margin-top: 0.95rem;
   color: #3f3a35;
   font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .two-column,
@@ -261,6 +302,47 @@ p {
 .question-panel p {
   margin-bottom: 0.75rem;
   font-weight: 750;
+}
+
+.problem .section-heading {
+  margin-bottom: clamp(1.45rem, 3.4vw, 2.25rem);
+}
+
+.problem h2 {
+  max-width: 800px;
+  font-size: var(--section-title-size);
+  line-height: var(--section-title-line);
+}
+
+.problem .two-column {
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.problem .two-column > div:first-child {
+  max-width: 680px;
+}
+
+.problem .two-column > div:first-child p {
+  margin-bottom: 1.15rem;
+  color: #312d29;
+  line-height: 1.72;
+}
+
+.question-panel {
+  padding-top: 0.15rem;
+}
+
+.question-panel p {
+  margin-bottom: 1rem;
+  color: #2f2a26;
+  line-height: 1.45;
+}
+
+.question-panel .check-list li {
+  padding-top: 0.95rem;
+  padding-bottom: 0.95rem;
+  line-height: 1.45;
 }
 
 .check-list,
@@ -309,6 +391,34 @@ p {
   border-left: 6px solid var(--accent);
 }
 
+.statement-box h3 {
+  margin-bottom: 0.85rem;
+}
+
+.split-band {
+  padding-top: clamp(2.2rem, 4.5vw, 3.6rem);
+  padding-bottom: clamp(2.2rem, 4.5vw, 3.6rem);
+}
+
+.split-band h2 {
+  font-size: var(--section-title-size);
+  line-height: var(--section-title-line);
+}
+
+.split-band .feature-list li {
+  padding-top: 0.72rem;
+  padding-bottom: 0.72rem;
+  line-height: 1.48;
+}
+
+.split-band .statement-box {
+  padding: clamp(1.1rem, 2.5vw, 1.65rem);
+}
+
+.split-band + .section {
+  padding-top: clamp(2.3rem, 4.5vw, 3.7rem);
+}
+
 .inline-cta {
   margin-top: 1.3rem;
 }
@@ -331,7 +441,8 @@ p {
 
 .outcome strong {
   margin-bottom: 0.35rem;
-  font-size: 1.08rem;
+  font-size: var(--card-title-size);
+  line-height: var(--card-title-line);
 }
 
 .outcome span {
@@ -386,8 +497,8 @@ blockquote {
 }
 
 .preview {
-  padding-top: clamp(2.5rem, 5vw, 4rem);
-  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(2.25rem, 4.5vw, 3.6rem);
+  padding-bottom: clamp(2.25rem, 4.5vw, 3.6rem);
 }
 
 .price-panel {
@@ -451,11 +562,6 @@ blockquote {
   margin: 0;
 }
 
-.todo {
-  color: var(--accent);
-  font-size: 0.92rem;
-}
-
 .transparency-note {
   margin: 1.4rem 0 0;
   padding: 0.95rem 1rem;
@@ -473,7 +579,8 @@ blockquote {
 .presale-steps h3 {
   margin-bottom: 0.85rem;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1.08rem;
+  font-size: 1.02rem;
+  line-height: 1.25;
   font-weight: 900;
 }
 
@@ -532,8 +639,8 @@ blockquote {
 .author-card p {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
-  line-height: 1.28;
+  font-size: var(--card-title-size);
+  line-height: var(--card-title-line);
 }
 
 .author-card span {
@@ -545,7 +652,7 @@ blockquote {
 }
 
 .faq {
-  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: clamp(2.3rem, 4.5vw, 3.7rem);
 }
 
 .faq-list {
@@ -598,8 +705,8 @@ blockquote {
 
 .final-cta {
   text-align: center;
-  padding-top: clamp(2.5rem, 5vw, 4rem);
-  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(2.3rem, 4.5vw, 3.7rem);
+  padding-bottom: clamp(2.3rem, 4.5vw, 3.7rem);
 }
 
 .final-cta h2,
@@ -640,19 +747,59 @@ blockquote {
 }
 
 .legal-page {
-  width: min(850px, calc(100% - 2rem));
+  width: min(800px, calc(100% - 2rem));
   margin: 0 auto;
   padding: 4rem 0;
+  text-align: left;
+}
+
+.legal-back {
+  display: inline-block;
+  margin-bottom: 2.6rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 750;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.legal-back:hover,
+.legal-back:focus-visible {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
 }
 
 .legal-page h1 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.35rem;
   font-size: clamp(2.4rem, 8vw, 4.5rem);
+  line-height: 1.02;
 }
 
 .legal-page h2 {
-  margin-top: 2rem;
-  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  margin-top: 2.35rem;
+  margin-bottom: 0.7rem;
+  font-size: clamp(1.45rem, 4vw, 2rem);
+  line-height: 1.15;
+}
+
+.legal-page p,
+.legal-page li {
+  color: #312d29;
+  line-height: 1.7;
+}
+
+.legal-page p {
+  margin-bottom: 1rem;
+}
+
+.legal-page ul {
+  margin: 0.45rem 0 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.legal-page li + li {
+  margin-top: 0.35rem;
 }
 
 .notice {
@@ -709,9 +856,44 @@ blockquote {
   }
 }
 
+@media (max-width: 899px) {
+  :root {
+    --section-y: clamp(2.45rem, 7vw, 3.75rem);
+    --section-title-size: clamp(1.9rem, 6vw, 2.85rem);
+  }
+
+  .hero {
+    gap: clamp(1.6rem, 5vw, 2.4rem);
+    padding-top: clamp(0.9rem, 3vw, 1.5rem);
+  }
+
+  .hero h1 {
+    max-width: 760px;
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+    line-height: 1.04;
+  }
+
+  .hero__lead {
+    max-width: 680px;
+  }
+
+  .hero__cover {
+    width: min(58vw, 330px);
+  }
+
+  .section-heading {
+    margin-bottom: clamp(1.3rem, 4vw, 2rem);
+  }
+
+  .problem .two-column {
+    gap: clamp(1.4rem, 5vw, 2.5rem);
+  }
+}
+
 @media (max-width: 520px) {
   :root {
-    --section-y: clamp(2.75rem, 12vw, 3.5rem);
+    --section-y: clamp(2.15rem, 9vw, 2.85rem);
+    --section-title-size: clamp(1.68rem, 7.2vw, 2.25rem);
     --card-x: 1rem;
   }
 
@@ -723,28 +905,49 @@ blockquote {
 
   .nav {
     width: 100%;
+    gap: 0.9rem;
     padding-bottom: 0.1rem;
   }
 
   .hero {
     min-height: auto;
-    gap: 1.75rem;
-    padding-top: 2rem;
+    gap: 1.35rem;
+    padding-top: 0.75rem;
+    padding-bottom: 1.25rem;
   }
 
   .hero h1 {
-    font-size: clamp(2.55rem, 15vw, 3.35rem);
-    line-height: 0.98;
+    max-width: 100%;
+    font-size: clamp(1.82rem, 8vw, 2.3rem);
+    line-height: 1.06;
   }
 
   .hero__lead {
-    font-size: 1.04rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .hero__cover {
-    width: min(72vw, 285px);
+    width: min(66vw, 260px);
     padding: 0.45rem;
     transform: rotate(-0.8deg);
+  }
+
+  .button-row,
+  .preview__action {
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+  }
+
+  .button {
+    min-height: 52px;
+    padding: 0.82rem 1rem;
+  }
+
+  .small-note {
+    font-size: 0.92rem;
+    line-height: 1.55;
   }
 
   .hero-note {
@@ -765,6 +968,35 @@ blockquote {
   .price-panel,
   .author-card {
     padding: 1rem;
+  }
+
+  .split-band {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .preview,
+  .offer,
+  .bonus,
+  .author,
+  .final-cta {
+    padding-top: 1.9rem;
+    padding-bottom: 1.9rem;
+  }
+
+  .section-heading p:not(.eyebrow) {
+    font-size: 1rem;
+  }
+
+  .check-list li,
+  .feature-list li {
+    padding-left: 1.55rem;
+  }
+
+  .check-list li::before,
+  .feature-list li::before {
+    width: 0.58rem;
+    height: 0.58rem;
   }
 
   .toc-list li {

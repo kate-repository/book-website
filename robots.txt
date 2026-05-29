@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nieidznastudia.pl/sitemap.xml
