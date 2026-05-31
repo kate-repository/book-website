@@ -1,5 +1,5 @@
 (function () {
-  window.gtag_report_conversion = function () {
+  function reportPurchaseConversion() {
     if (typeof window.gtag === "function") {
       window.gtag("event", "conversion", {
         send_to: "AW-18199930711/mmzgCM3rq7YcENfOs-ZD",
@@ -7,11 +7,11 @@
         currency: "EUR"
       });
     }
-  };
+  }
 
   document.querySelectorAll('[data-conversion="purchase"]').forEach(function (link) {
     link.addEventListener("click", function () {
-      window.gtag_report_conversion();
+      reportPurchaseConversion();
     });
   });
 
